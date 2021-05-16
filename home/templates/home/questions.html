@@ -1,0 +1,58 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+
+{% block title%}
+  {% for a in entry2 %}
+    <title>AssignGuru - {{a.name}}</title>
+  {% endfor %}
+{% endblock title%}
+
+
+
+{% block mcqs %}
+
+
+    <!-- ========================
+       page title 
+    =========================== -->
+    <section class="page-title page-title-layout7 text-center bg-overlay bg-parallax">
+      <div class="bg-img"><img src={% static "assets/images/page-titles/7.jpg" %} alt="background"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+          {% for a in entry2 %}
+            <h1 class="pagetitle__heading">{{ a.name }}</h1>
+          {% endfor %}
+          </div><!-- /.col-xl-6 -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </section><!-- /.page-title -->
+
+    <!-- ========================= 
+         Reviews
+    =========================  -->
+  
+    <section class="careers">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="container">
+            {% for a in entry %}
+              <div class="job-item">
+                <div class="row">
+                  <div class="col-sm-12 col-md-12 col-lg-4">
+                    <p class="job-item__desc">{{ a.question }}</p>
+                  </div><!-- /.col-lg-4 -->
+                  <div class="col-sm-12 col-md-12 col-lg-5">
+                    <p class="job-item__desc">{{ a.answer }}</p>
+                  </div><!-- /.col-lg-5 -->
+                </div><!-- /.row -->
+              </div><!-- /.job-item --> 
+              {% endfor %}
+          </div><!-- /.col-lg-12 -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </section><!-- /.careers -->
+  
+{% endblock mcqs %}
